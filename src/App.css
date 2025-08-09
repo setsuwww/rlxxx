@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@layer base {
+  @font-face {
+    font-family: 'JBMono';
+    src: url('/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  * { font-family: "JBMono", sans-serif; }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+
+.element {
+  @apply min-h-screen flex items-center justify-center;
+}
+
+.element-children {
+  @apply min-h-screen w-full items-center justify-center;
+}
+
