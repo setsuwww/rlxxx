@@ -1,5 +1,5 @@
 import React from "react";
-import { LINUX_WINDOW_CLASSES } from "../constants/linuxTheme";
+import { LINUX_WINDOW_CLASSES } from "../../constants/linuxTheme";
 
 function LinuxWindow({ title, children, showFooter = false, footerContent, dark = true }) {
   const classes = dark ? LINUX_WINDOW_CLASSES.dark : LINUX_WINDOW_CLASSES.light;

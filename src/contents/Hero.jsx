@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import LinuxWindow from "./LinuxWindow";
+import LinuxWindow from "../components/linux/LinuxWindow";
 import TerminalLabel from "../components/terminal/TerminalLabel";
 import TerminalInput from "../components/terminal/TerminalInput";
 import TypingText from "../components/TypingText";
-import LinuxHeading from "./LinuxHeading";
+import LinuxHeading from "../components/linux/LinuxHeading";
 
 export default function Hero() {
   const [name, setName] = useState("");

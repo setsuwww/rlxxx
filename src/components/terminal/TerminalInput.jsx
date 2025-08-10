@@ -8,7 +8,7 @@ const TerminalInput = React.memo(function TerminalInput({
 }) {
   return (
     <div className="flex items-center space-x-2 bg-transparent">
-      <span className="text-green-500 select-none">>></span>
+      <span className="text-green-500 select-none">{'>>'}</span>
       <input
         value={value}
         onChange={onChange}

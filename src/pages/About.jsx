@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { aboutDescription } from "../constants/aboutDescription";
 import AboutLinuxWindow from "../contents/AboutLinuxWindow";
-import LinuxHeading from "../contents/LinuxHeading";
+import LinuxHeading from "../components/linux/LinuxHeading";
 import { FaGithub } from "react-icons/fa";
 
 export default function About() {

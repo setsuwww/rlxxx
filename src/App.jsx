@@ -1,9 +1,13 @@
 import { Element } from 'react-scroll';
 
 import Navbar from './components/Navbar';
+
 import Hero from './contents/Hero';
 import About from './pages/About';
 import Project from './pages/Project';
+import Contact from './pages/Contact';
+
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,6 +25,12 @@ function App() {
       <Element name="projects" className="element">
         <Project />
       </Element>
+
+      <Element name="contact" className="element">
+        <Contact />
+      </Element>
+
+      <Footer />
     </div>
   );
 }

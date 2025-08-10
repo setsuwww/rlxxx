@@ -1,5 +1,5 @@
 import React from "react";
-import LinuxWindow from "./LinuxWindow";
+import LinuxWindow from "../components/linux/LinuxWindow";
 
 function AboutLinuxWindow({ title, commandColor = "text-violet-400", command, description, endcommand }) {
   return (
