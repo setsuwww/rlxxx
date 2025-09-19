@@ -5,19 +5,16 @@ import LinuxHeading from "../components/linux/LinuxHeading";
 import { FaGithub } from "react-icons/fa";
 
 export default function About() {
-  const favorites = useMemo(
-    () => [
+  const favorites = useMemo(() => [
       { label: "Person", value: "Her" },
       { label: "Band", value: "Avenged Sevenfold" },
       { label: "Song", value: "Bat Country" },
       { label: "Hobby", value: "Coding & Explore" },
       { label: "Makanan", value: "Mie Ayam" },
-    ],
-    []
+    ],[]
   );
 
-  const favoriteString = useMemo(
-    () => favorites.map(fav => `${fav.label} : ${fav.value}`).join("\n"),
+  const favoriteString = useMemo(() => favorites.map(fav => `${fav.label} : ${fav.value}`).join("\n"),
     [favorites]
   );
 

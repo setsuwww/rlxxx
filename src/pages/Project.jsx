@@ -15,9 +15,9 @@ const ProjectCard = React.memo(function ProjectCard({ title, description, image 
 
 export default function Project() {
   return (
-    <section className="flex flex-col w-full bg-radial from-yellow-200 via-transparent to-transparent">
+    <section className="flex flex-col w-full">
       <div className="text-center mb-6">
-        <LinuxHeading
+        <LinuxHeading 
           title="Projects"
           description="Liat liat projek gw nih kalo minat sabi kali sini gw kerjain ofkors bayar"
         />
@@ -25,6 +25,10 @@ export default function Project() {
 
       <div className="p-6 flex justify-center">
         <LinuxWindow dark={false} title="~/My-Project" showFooter footerContent="ML Projects">
+          <p className="max-w-lg p-2 border border-dashed tracking-tight border-gray-300 mb-6 text-gray-400 rounded-xl">
+            Bisa lah lu pada maklumi bae kalo ini masih aplikasi kecil, 
+            namanya ge pemula ilokan orang baru bet belajar langsung bikin aplikasi gede,
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center">
             {myProjects.map((p) => (
               <ProjectCard

@@ -9,11 +9,11 @@ function LinuxWindow({ title, children, showFooter = false, footerContent, dark 
       <div className={`${classes.bgClass} backdrop-blur-md rounded-lg shadow-lg overflow-hidden`}>
         
         {/* Header */}
-        <header className={`${classes.headerClass} flex items-center justify-between px-6 py-4 border-b`}>
+        <header className={`${classes.headerClass} flex items-center justify-between px-6 py-3 border-b`}>
           <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-red-500"></span>
-            <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
-            <span className="w-3 h-3 rounded-full bg-green-500"></span>
+            <span className="w-3 h-3 rounded-full bg-red-500/60 hover:bg-red-400 transition-colors"></span>
+            <span className="w-3 h-3 rounded-full bg-yellow-500/60 hover:bg-yellow-400 transition-colors"></span>
+            <span className="w-3 h-3 rounded-full bg-green-500/60 hover:bg-green-400 transition-colors"></span>
           </div>
           <span className={`ml-4 text-sm ${classes.textClass}`}>{title}</span>
         </header>

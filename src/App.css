@@ -21,3 +21,9 @@
   @apply min-h-screen w-full items-center justify-center;
 }
 
+.dollar {
+  text-shadow: 
+    0 0 6px rgba(234, 179, 8, 0.6),
+    0 0 16px rgba(234, 179, 8, 0.5),
+    0 0 34px rgba(234, 179, 8, 0.4);
+}

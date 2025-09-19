@@ -12,7 +12,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="p-6 w-full min-h-screen flex flex-col justify-between">
+    <div className="element-children">
       <LinuxHeading title="Contact" description="Need something chat gw, gw bales gw bukan seleb cuman slowresp" />
 
       <LinuxWindow dark={false} title="~/Contact-Me">
@@ -23,25 +23,25 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
               <label className="block mb-2 text-md font-medium text-gray-700">
-                Nama
+                Nama <span className="text-blue-500">*</span>
               </label>
               <input
                 type="text"
                 name="name"
                 required
-                className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-100 focus:outline-none focus:border-yellow-500 transition-all ease-in"
               />
             </div>
 
             <div className="flex-1">
               <label className="block mb-2 text-md font-medium text-gray-700">
-                Email
+                Email <span className="text-blue-500">*</span>
               </label>
               <input
                 type="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-100 focus:outline-none focus:border-yellow-500 transition-all ease-in"
               />
             </div>
           </div>
@@ -49,20 +49,20 @@ export default function Contact() {
           {/* Pesan */}
           <div>
             <label className="block mb-2 text-md font-medium text-gray-700">
-              Pesan
+              Pesan <span className="text-blue-500">*</span>
             </label>
             <textarea
               name="message"
               rows="6"
               required
-              className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+              className="w-full px-4 py-3 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-100 focus:outline-none focus:border-yellow-500 transition-all ease-in focus:inset-shadow-sm focus:inset-shadow-yellow-100"
             ></textarea>
           </div>
 
           {/* Tombol */}
           <button
             type="submit"
-            className="w-full px-4 py-3 text-lg bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold"
+            className="w-full px-2 py-3 text-lg bg-gradient-to-b from-gray-900 to-gray-700 text-white rounded-lg hover:bg-blue-700 font-semibold ring-gray-700 inset-shadow-xs inset-shadow-white"
           >
             Kirim
           </button>
