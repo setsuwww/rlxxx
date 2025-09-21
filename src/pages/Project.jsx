@@ -5,10 +5,16 @@ import { myProjects } from "../constants/myProjects";
 
 const ProjectCard = React.memo(function ProjectCard({ title, description, image }) {
   return (
-    <div className="border border-gray-300 rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow duration-200 flex flex-col items-center text-center">
-      <img loading="lazy" src={image} alt={title} className="w-full h-24 object-cover rounded-t-lg mb-3"/>
-      <h3 className="px-4 pb-2 font-semibold text-lg tracking-tight">{title}</h3>
-      <p className="px-4 pb-4 text-sm text-gray-600 tracking-tighter max-w-xs">{description}</p>
+    <div className="group p-4 border border-dashed border-zinc-400 hover:border-solid hover:border-yellow-300 rounded-lg shadow-sm bg-white hover:shadow-yellow-200 transition-all flex flex-col items-center md:items-left hover:scale-95">
+      <img loading="lazy" src={image} alt={title} className="w-full h-24 object-cover rounded-t-lg mb-3" />
+      <div className="border-2 border-dotted border-zinc-300 transition delay-100 duration-100 ease-in-out group-hover:border-yellow-200 rounded-md py-2">
+        <h3 className="px-4 max-w-xs font-bold text-lg text-zinc-700 group-hover:text-violet-700 transition delay-700 duration-100 ease-in-out tracking-tight text-center md:text-left">
+          {title}
+        </h3>
+        <p className="px-4 text-sm text-zinc-400 tracking-tighter max-w-xs text-center md:text-left">
+          {description}
+        </p>
+      </div>
     </div>
   );
 });
@@ -16,8 +22,8 @@ const ProjectCard = React.memo(function ProjectCard({ title, description, image 
 export default function Project() {
   return (
     <section className="flex flex-col w-full">
-      <div className="text-center mb-6">
-        <LinuxHeading 
+      <div className="text-center">
+        <LinuxHeading
           title="Projects"
           description="Liat liat projek gw nih kalo minat sabi kali sini gw kerjain ofkors bayar"
         />
@@ -25,11 +31,7 @@ export default function Project() {
 
       <div className="p-6 flex justify-center">
         <LinuxWindow dark={false} title="~/My-Project" showFooter footerContent="ML Projects">
-          <p className="max-w-lg p-2 border border-dashed tracking-tight border-gray-300 mb-6 text-gray-400 rounded-xl">
-            Bisa lah lu pada maklumi bae kalo ini masih aplikasi kecil, 
-            namanya ge pemula ilokan orang baru bet belajar langsung bikin aplikasi gede,
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {myProjects.map((p) => (
               <ProjectCard
                 key={p.title}

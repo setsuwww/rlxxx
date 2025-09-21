@@ -20,7 +20,7 @@ export default function About() {
 
   return (
     <div className="element-children p-6 bg-gradient-to-b from-sky-950 to-zinc-900 text-white">
-      <LinuxHeading title="About" 
+      <LinuxHeading title="About" dark={true}
         description="Gw kasih tau sedikit info tentang biar lu tau, meski lu ga mau tau" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">

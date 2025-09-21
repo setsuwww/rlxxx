@@ -38,10 +38,10 @@ export default function Hero() {
 
 return (
   <div className="bg-gradient-to-t from-sky-950 to-zinc-900 text-white p-6 min-h-screen flex flex-col items-center justify-center">
-    <LinuxHeading title="Welcome" />
+    <LinuxHeading title="Welcome" dark={true} />
 
     <div className="w-full max-w-2xl">
-      <LinuxWindow title="~/Welcome" showFooter={true} footerContent="© 2025 Riinsss">
+      <LinuxWindow title="~/Welcome" showFooter={true} footerContent="© 2025 Rlxxx">
         {!submittedName ? (
           <form onSubmit={handleSubmit} className="space-y-4">
             <label className="block text-zinc-400">
@@ -56,7 +56,7 @@ return (
           <div className="space-y-2">
             <p className="text-white font-light">
               <span className="text-yellow-500">$ </span> 
-              <span className="text-zinc-400">~ {submittedName}&gt; </span> 
+              <span className="text-zinc-400">~ <span className="uppercase text-green-400">{submittedName}@YOU</span> <span className="text-violet-400">MINGW64</span> </span> 
               Hello {submittedName}
             </p>
 

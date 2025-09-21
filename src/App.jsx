@@ -22,11 +22,11 @@ function App() {
         <About />
       </Element>
 
-      <Element name="projects" className="element">
+      <Element name="projects" id="projects" className="element bg-gradient-to-b from-zinc-100 to-white">
         <Project />
       </Element>
 
-      <Element name="contact" className="element">
+      <Element name="contact" id='contact' className="element bg-gradient-to-t from-orange-300 via-yellow-100 to-white">
         <Contact />
       </Element>
 
