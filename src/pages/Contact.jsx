@@ -10,7 +10,18 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Makasi udah sempetin mampir sampe kirim pesan, see u next time");
+
+    const formData = new FormData(e.target);
+    const message = formData.get("message")?.toLowerCase() || "";
+
+    if (message.includes("dayat")) {
+      setStatus('Ga dikirim, ada kata-kata "dayat", Tai lu!');
+    } else {
+      setStatus(
+        "Makasi udah sempetin mampir sampe kirim pesan, sekiranya ada saran atau pesan demi kemajuan gw boleh disampaikan"
+      );
+    }
+
     setPopupOpen(true);
     e.target.reset();
   };
@@ -73,7 +84,8 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button type="submit"
+          <button
+            type="submit"
             className="w-full px-2 py-2 font-bold text-lg border border-gray-300 bg-white 
              shadow-sm hover:bg-radial hover:from-gray-100 hover:to-white hover:shadow-none text-gray-600 rounded-xl 
              transition-all ease-in duration-100 flex items-center justify-center gap-2"
@@ -81,7 +93,6 @@ export default function Contact() {
             <span>Kirim pesan</span>
             <BiSend />
           </button>
-
         </form>
       </LinuxWindow>
 

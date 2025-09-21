@@ -11,6 +11,7 @@ export default function About() {
       { label: "Song", value: "Bat Country" },
       { label: "Hobby", value: "Coding & Explore" },
       { label: "Makanan", value: "Mie Ayam" },
+      { label: "Minuman", value: "Teh" },
     ],[]
   );
 

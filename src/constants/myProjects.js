@@ -7,11 +7,11 @@ export const myProjects = [
   {
     title: "VueAPI",
     description: "Apk backend buat API, endpoint terus fetching di frontend",
-    image: "/vapi.png",
+    image: "/vapi.webp",
   },
   {
     title: "How's the Weather",
     description: "Apk machine learning kedua gw pake js always i love js",
-    image: "/htw.png",
+    image: "/htw.webp",
   },
 ];

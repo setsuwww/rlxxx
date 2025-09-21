@@ -11,6 +11,8 @@ export default function LinuxPopup({ open, onClose, message }) {
     }
   }, [open, onClose]);
 
+  const isDayat = message?.toLowerCase().includes("dayat");
+
   return (
     <AnimatePresence>
       {open && (
@@ -31,19 +33,36 @@ export default function LinuxPopup({ open, onClose, message }) {
               damping: 20,
             }}
           >
-            <div className="flex items-center justify-between bg-gray-100 px-4 py-2 border-b border-gray-300">
+            {/* Header */}
+            <div
+              className="flex items-center justify-between px-4 py-2 border-b border-gray-300 bg-gray-100">
               <div className="flex items-center space-x-2">
-                <button onClick={onClose} className="w-3 h-3 bg-red-500 rounded-full"></button>
+                <button
+                  onClick={onClose}
+                  className="w-3 h-3 bg-red-500 rounded-full"
+                ></button>
                 <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
                 <span className="w-3 h-3 bg-green-500 rounded-full"></span>
               </div>
-              <span className="text-zinc-700">
-                ~/Success
+              <span className="text-zinc-600">
+                {isDayat ? "~/Error" : "~/Success"}
               </span>
             </div>
 
-            <div className="p-6 text-left">
-              <p className="text-sm font-base text-green-700 bg-green-100 border border-green-400 p-4 rounded-md">
+            {/* Body */}
+            <div className="p-6 text-left flex flex-col items-center space-y-4">
+              <img
+                src={isDayat ? "/ambathink.jfif" : "/amba.jpg"}
+                alt={isDayat ? "Error Icon" : "Success Icon"}
+                className="w-32 h-32 rounded-lg"
+              />
+              <p
+                className={`text-sm font-base p-4 rounded-md border ${
+                  isDayat
+                    ? "text-red-700 bg-red-100 border-red-400"
+                    : "text-green-700 bg-green-100 border-green-400"
+                }`}
+              >
                 {message}
               </p>
             </div>
