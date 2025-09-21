@@ -74,8 +74,8 @@ export default function Navbar() {
                   <button onClick={() => setMenuOpen(false)} 
                     className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors" aria-label="Close menu">
                   </button>
-                  <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
-                  <span className="w-3 h-3 bg-green-500 rounded-full"></span>
+                  <span className="w-3 h-3 bg-yellow-500/50 rounded-full"></span>
+                  <span className="w-3 h-3 bg-green-500/50 rounded-full"></span>
                 </div>
 
                 <span className="text-xs text-zinc-400">~/Rlxxx@menu:~</span>

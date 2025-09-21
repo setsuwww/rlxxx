@@ -26,7 +26,7 @@ function App() {
         <Project />
       </Element>
 
-      <Element name="contact" id='contact' className="element bg-gradient-to-t from-orange-300 via-yellow-100 to-white">
+      <Element name="contact" id='contact' className="element bg-gradient-to-t from-orange-500/60 via-yellow-300/20 to-white">
         <Contact />
       </Element>
 

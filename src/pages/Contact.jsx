@@ -36,7 +36,7 @@ export default function Contact() {
       <LinuxWindow dark={false} title="~/Contact-Me">
         <form
           onSubmit={handleSubmit}
-          className="space-y-6 max-w-6xl w-full mx-auto p-4"
+          className="space-y-6 max-w-6xl w-full mx-auto p-2 md:p-4"
         >
           {/* Nama & Email sejajar */}
           <div className="flex flex-col md:flex-row gap-6">
@@ -44,11 +44,8 @@ export default function Contact() {
               <label className="block mb-2 text-md font-semibold text-gray-600">
                 Nama <span className="text-blue-500">*</span>
               </label>
-              <input
-                type="text"
-                name="name"
-                required
-                className="w-full px-4 py-1.5 text-lg border border-gray-300 rounded-xl 
+              <input type="text" name="name" required
+                className="w-full px-4 py-2.5 text-sm font-semibold text-gray-600 border border-gray-300 rounded-md md:rounded-xl 
                            focus:ring-2 focus:ring-yellow-100 focus:outline-none 
                            focus:border-yellow-500 transition-all ease-in"
               />
@@ -58,11 +55,8 @@ export default function Contact() {
               <label className="block mb-2 text-md font-semibold text-gray-600">
                 Email <span className="text-blue-500">*</span>
               </label>
-              <input
-                type="email"
-                name="email"
-                required
-                className="w-full px-4 py-1.5 text-lg border border-gray-300 rounded-xl 
+              <input type="email" name="email" required
+                className="w-full px-4 py-2.5 text-sm font-semibold text-gray-600 border border-gray-300 rounded-md md:rounded-xl 
                            focus:ring-2 focus:ring-yellow-100 focus:outline-none 
                            focus:border-yellow-500 transition-all ease-in"
               />
@@ -74,19 +68,15 @@ export default function Contact() {
             <label className="block mb-2 text-md font-semibold text-gray-600">
               Pesan <span className="text-blue-500">*</span>
             </label>
-            <textarea
-              name="message"
-              rows="4"
-              required
-              className="w-full px-4 py-1.5 text-lg border border-gray-300 rounded-xl 
+            <textarea name="message" rows="4" required
+              className="w-full px-4 py-2.5 text-sm font-semibold text-gray-600 border border-gray-300 rounded-md md:rounded-xl
                          focus:ring-2 focus:ring-yellow-100 focus:outline-none 
                          focus:border-yellow-500 transition-all ease-in"
             ></textarea>
           </div>
 
-          <button
-            type="submit"
-            className="w-full px-2 py-2 font-bold text-lg border border-gray-300 bg-white 
+          <button type="submit"
+            className="w-full px-2 py-2 font-bold text-base md:text-lg border border-gray-300 bg-white 
              shadow-sm hover:bg-radial hover:from-gray-100 hover:to-white hover:shadow-none text-gray-600 rounded-xl 
              transition-all ease-in duration-100 flex items-center justify-center gap-2"
           >

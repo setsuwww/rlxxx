@@ -54,9 +54,10 @@ return (
           </form>
         ) : (
           <div className="space-y-2">
-            <p className="text-white font-light">
+            <p className="text-white font-light text-sm md:text-base">
               <span className="text-yellow-500">$ </span> 
-              <span className="text-zinc-400">~ <span className="uppercase text-green-400">{submittedName}@YOU</span> <span className="text-violet-400">MINGW64</span> </span> 
+              <span className="text-zinc-400">~ 
+              <span className="uppercase text-green-400/80"> {submittedName}@YOU</span> <span className="text-purple-400/80">MINGW64</span> </span> 
               Hello {submittedName}
             </p>
 

@@ -18,7 +18,7 @@ export default function TypingText() {
 
   return (
     <div className="space-y-2 font-mono">
-      <p className="text-xl md:text-4xl font-bold text-zinc-400 py-4">
+      <p className="text-xl md:text-4xl font-bold text-zinc-400 py-4 tracking-wide">
         <Typewriter words={["Rifqi Synyster"]} typeSpeed={60}
           deleteSpeed={0}
           delaySpeed={200}
@@ -59,14 +59,14 @@ export default function TypingText() {
       </div>
 
       {/* Deskripsi */}
-      <p className={`text-sm text-zinc-500 pt-2 transition-all duration-700 ease-in-out transform ${showDescription ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+      <p className={`text-sm text-zinc-400 pt-2 transition-all duration-700 ease-in-out transform ${showDescription ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
         Selamat datang pendatang,  
         gw sambut dengan baik, kalo lu pergi gw relain, 
         fungsi web ini cuma buat ngasih tau hal hal random gajelas tentang gw
         lu dateng kesini cuma ngeliat hasil coding gabut gw, gajelas buang buang waktu 
         tapi makasih udah mampir.
       </p>
-      <span className='text-xs text-gray-600'> -- Terima kasih </span> 
+      <span className='text-xs text-gray-600'> # Terima kasih </span> 
     </div>
   );
 }
