@@ -69,35 +69,31 @@ export default function Navbar() {
             <motion.div className="w-[90%] max-w-2xl bg-zinc-900 text-white rounded-xl shadow-2xl overflow-hidden border border-zinc-700" 
               initial={{ scale: 0.8, opacity: 0, y: -20 }}  animate={{ scale: 1, opacity: 1, y: 0 }}  exit={{ scale: 0.9, opacity: 0, y: 20 }}  transition={{ type: "spring", stiffness: 200, damping: 20 }}
             >
-              <div className="flex items-center justify-between bg-zinc-800 px-4 py-3 border-b border-zinc-700">
+              <div className="flex items-center justify-between bg-gradient-to-b from-zinc-700/60 to-zinc-700/80 border-b border-zinc-600 inset-shadow-sm inset-shadow-zinc-700 px-4 py-2">
                 <div className="flex items-center space-x-2">
                   <button onClick={() => setMenuOpen(false)} 
                     className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors" aria-label="Close menu">
                   </button>
-                  <span className="w-3 h-3 bg-yellow-500/50 rounded-full"></span>
-                  <span className="w-3 h-3 bg-green-500/50 rounded-full"></span>
+                  <span className="w-3 h-3 bg-yellow-500/40 rounded-full"></span>
+                  <span className="w-3 h-3 bg-green-500/40 rounded-full"></span>
                 </div>
 
                 <span className="text-xs text-zinc-400">~/Rlxxx@menu:~</span>
               </div>
 
-              <div className="flex flex-col space-y-4 p-4 text-left">
+              <div className="flex flex-col space-y-4 py-3 px-4 text-left">
                 {navLinks.map((link, i) => (
                   <motion.div key={link.to} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}>
                     <SmoothLink to={link.to} onClick={() => setMenuOpen(false)}
                       className="hover:text-blue-400 flex items-center justify-between"
                     >
-                      <span className="text-base font-semibold">{link.label}</span>
-                      <span className="text-sm font-light text-gray-600">
+                      <span className="text-base font-light"><span className="text-yellow-500 mr-2">$</span>{link.label}</span>
+                      <span className="hidden md:flex text-sm font-light text-gray-600">
                         {link.description}
                       </span>
                     </SmoothLink>
                   </motion.div>
                 ))}
-              </div>
-
-              <div className="flex items-center bg-zinc-900 px-4 py-3 border-t border-zinc-800">
-                <span className="text-xs text-zinc-600">Menu</span>
               </div>
             </motion.div>
           </motion.div>
