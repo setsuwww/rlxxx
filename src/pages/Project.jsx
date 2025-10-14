@@ -48,9 +48,14 @@ export default function Project() {
                   className="w-full h-34 object-cover rounded-t-lg"
                 />
                 <div className="p-4 space-y-2">
-                  <h3 className="font-bold text-lg text-zinc-700">
-                    {p.title}
-                  </h3>
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-bold text-lg text-zinc-600">
+                      {p.title}
+                    </h3>
+                    <span className="px-2 py-1 text-xs rounded-full bg-yellow-100 border border-yellow-300/30 text-yellow-700">
+                      Machine Learning
+                    </span>
+                  </div>
                   <p className="text-sm text-zinc-400">{p.description}</p>
                 </div>
               </div>

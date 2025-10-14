@@ -81,13 +81,13 @@ export default function Navbar() {
                 <span className="text-xs text-zinc-400">~/Rlxxx@menu:~</span>
               </div>
 
-              <div className="flex flex-col space-y-4 py-3 px-4 text-left">
+              <div className="flex flex-col space-y-4 p-6 text-left">
                 {navLinks.map((link, i) => (
                   <motion.div key={link.to} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}>
                     <SmoothLink to={link.to} onClick={() => setMenuOpen(false)}
                       className="hover:text-blue-400 flex items-center justify-between"
                     >
-                      <span className="text-base font-light"><span className="text-yellow-500 mr-2">$</span>{link.label}</span>
+                      <span className="text-base font-light text-center md:text-left"><span className="text-yellow-500 mr-2">$</span>{link.label}</span>
                       <span className="hidden md:flex text-sm font-light text-gray-600">
                         {link.description}
                       </span>
