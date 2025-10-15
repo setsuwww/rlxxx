@@ -1,115 +1,162 @@
-import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-scroll";
-import clsx from "clsx";
-import { navLinks } from "../constants/navLinks";
-import { AnimatePresence, motion } from "framer-motion";
+
+
+import { RxHamburgerMenu, RxCross2 } from "react-icons/rx"
+import { useEffect, useRef, useState } from "react"
+import { Link } from "react-scroll"
+import clsx from "clsx"
+import { navLinks } from "../constants/navLinks"
+import { AnimatePresence, motion } from "framer-motion"
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const lastScroll = useRef(0);
-  const ticking = useRef(false);
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const lastScroll = useRef(0)
+  const ticking = useRef(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScroll = window.scrollY;
+      const currentScroll = window.scrollY
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
-          if (currentScroll > 10 && lastScroll.current <= 10) {
-            setScrolled(true);
-          } else if (currentScroll <= 10 && lastScroll.current > 10) {
-            setScrolled(false);
-          }
-          lastScroll.current = currentScroll;
-          ticking.current = false;
-        });
-        ticking.current = true;
+          setScrolled(currentScroll > 10)
+          lastScroll.current = currentScroll
+          ticking.current = false
+        })
+        ticking.current = true
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
-      <nav className={clsx( "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out mix-blend-difference",
-          scrolled ? "bg-white/10 backdrop-blur-xl border-b border-white/20 shadow-lg py-3"
-            : "bg-transparent py-6"
+      {/* ===== NAVBAR ===== */}
+      <motion.nav
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={clsx(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
+          scrolled
+            ? "bg-white/10 backdrop-blur-xl border-b border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] py-3"
+            : "bg-transparent py-5"
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-          <div className="text-lg font-semibold tracking-tight text-white">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6">
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="text-lg font-semibold tracking-tight text-white"
+          >
             Rlxxx<span className="text-blue-400">.</span>
-          </div>
+          </motion.div>
 
-          <button className="p-2 rounded-xl 
-            bg-gradient-to-b from-gray-700 to-gray-600 hover:to-gray-400
-            ring-1 ring-gray-700 inset-shadow-2xs inset-shadow-gray-500 hover:ring-gray-500
-            backdrop-blur-sm
-            border border-gray-600 hover:border-gray-400
-            transition-all" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-            {menuOpen ? (
-              <RxCross2 size={22} className="text-white" />
-            ) : (
-              <RxHamburgerMenu size={22} className="text-white" />
-            )}
-          </button>
+          {/* Menu button */}
+          <motion.button
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.08)" }}
+            onClick={() => setMenuOpen(true)}
+            aria-label="Toggle menu"
+            className="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 
+                       text-white transition-all duration-200 hover:bg-white/20"
+          >
+            <RxHamburgerMenu size={22} />
+          </motion.button>
         </div>
-      </nav>
+      </motion.nav>
 
+      {/* ===== DRAWER MENU ===== */}
       <AnimatePresence>
         {menuOpen && (
-          <motion.div key="menu" className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur"
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}
-          >
-            <motion.div className="w-[90%] max-w-2xl bg-zinc-900 text-white rounded-xl shadow-2xl overflow-hidden border border-zinc-700" 
-              initial={{ scale: 0.8, opacity: 0, y: -20 }}  animate={{ scale: 1, opacity: 1, y: 0 }}  exit={{ scale: 0.9, opacity: 0, y: 20 }}  transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            >
-              <div className="flex items-center justify-between bg-gradient-to-b from-zinc-700/60 to-zinc-700/80 border-b border-zinc-600 inset-shadow-sm inset-shadow-zinc-700 px-4 py-2">
-                <div className="flex items-center space-x-2">
-                  <button onClick={() => setMenuOpen(false)} 
-                    className="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors" aria-label="Close menu">
-                  </button>
-                  <span className="w-3 h-3 bg-yellow-500/40 rounded-full"></span>
-                  <span className="w-3 h-3 bg-green-500/40 rounded-full"></span>
-                </div>
+          <>
+            {/* Overlay */}
+            <motion.div
+              key="overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+              onClick={() => setMenuOpen(false)}
+            />
 
-                <span className="text-xs text-zinc-400">~/Rlxxx@menu:~</span>
+            {/* Drawer */}
+            <motion.div
+  key="drawer"
+  initial={{ x: "100%" }}
+  animate={{ x: 0 }}
+  exit={{ x: "100%" }}
+  transition={{ type: "spring", stiffness: 120, damping: 18 }}
+  className={clsx(
+    "fixed right-0 h-[98%] w-[80%] max-w-sm z-50 mr-2 mb-10",
+    "bg-zinc-900/90 backdrop-blur-2xl border-l border-white/10 shadow-[0_0_60px_rgba(255,255,255,0.05)] flex flex-col transition-all duration-100",
+    scrolled ? "mt-[9px]" : "mt-3.5" // ganti dari mt ke top
+  )}
+>
+
+              {/* Header */}
+              <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                <div className="text-base text-white font-medium">
+                  <span className="text-blue-400">Rlxxx</span> Menu
+                </div>
+                <motion.button
+                  whileTap={{ scale: 0.85 }}
+                  className="text-white/70 hover:text-white transition-colors"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  <RxCross2 size={22} />
+                </motion.button>
               </div>
 
-              <div className="flex flex-col space-y-4 p-6 text-left">
+              {/* Menu Items */}
+              <div className="flex-1 overflow-y-auto p-6 space-y-5">
                 {navLinks.map((link, i) => (
-                  <motion.div key={link.to} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}>
-                    <SmoothLink to={link.to} onClick={() => setMenuOpen(false)}
-                      className="hover:text-blue-400 flex items-center justify-between"
+                  <motion.div
+                    key={link.to}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <SmoothLink
+                      to={link.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="group flex items-center justify-between text-zinc-300 hover:text-white 
+                                 transition-all text-lg font-light"
                     >
-                      <span className="text-base font-light text-center md:text-left"><span className="text-yellow-500 mr-2">$</span>{link.label}</span>
-                      <span className="hidden md:flex text-sm font-light text-gray-600">
-                        {link.description}
+                      <span className="flex items-center gap-2">
+                        <span className="text-yellow-400">$</span>
+                        {link.label}
                       </span>
+                      <motion.span
+                        initial={{ opacity: 0, x: 10 }}
+                        whileHover={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="text-xs text-zinc-500 group-hover:text-zinc-300"
+                      >
+                        {link.description}
+                      </motion.span>
                     </SmoothLink>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }
 
 const SmoothLink = ({ to, children, onClick, className }) => (
-  <Link to={to} smooth={true} duration={500} onClick={onClick}
-    className={clsx(
-      "cursor-pointer transition-colors duration-200",
-      className
-    )}
+  <Link
+    to={to}
+    smooth={true}
+    duration={500}
+    onClick={onClick}
+    className={clsx("cursor-pointer transition-colors duration-200", className)}
   >
     {children}
   </Link>
-);
+)

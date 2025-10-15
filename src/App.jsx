@@ -18,15 +18,15 @@ function App() {
         <Hero/>
       </Element>
 
-      <Element name="about" className="element bg-transparent">
+      <Element name="about">
         <About />
       </Element>
 
-      <Element name="projects" id="projects" className="element bg-gradient-to-b from-zinc-100 to-white">
+      <Element name="projects" id="projects" className="bg-gradient-to-b from-zinc-100 to-white">
         <Project />
       </Element>
 
-      <Element name="contact" id='contact' className="element bg-gradient-to-t from-orange-500/60 via-yellow-300/20 to-white">
+      <Element name="contact" id='contact' className="bg-gradient-to-t from-orange-500/60 via-yellow-300/20 to-white">
         <Contact />
       </Element>
 
