@@ -2,8 +2,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Raleway';
-    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+    font-family: 'NotoSansKR';
+    src: url('/fonts/NotoSansKR-VariableFont_wght.ttf') format('truetype-variations');
     font-weight: 100 900;
     font-display: swap;
     font-style: normal;
@@ -18,7 +18,7 @@
   }
 
   * {
-    font-family: "Raleway", sans-serif;
+    font-family: "NotoSansKR", sans-serif;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -33,7 +33,7 @@
 
 .hallo {
   font-family: 'PlaywriteDESAS', sans-serif;
-  letter-spacing: 0.5px;
+  font-weight: 400;
 }
 
 .element {
