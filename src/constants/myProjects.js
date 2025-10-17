@@ -1,17 +1,17 @@
 export const myProjects = [
   {
     title: "Pymoney",
-    description: "Apk machine learning pertama gw yg gw buat pake Python",
+    description: "Project machine learning pertama menggunakan python",
     image: "/pymoney.webp",
   },
   {
     title: "VueAPI",
-    description: "Apk backend buat API, endpoint terus fetching di frontend",
+    description: "Backend API & Server untuk Vue",
     image: "/vapi.webp",
   },
   {
-    title: "How's the Weather",
-    description: "Apk machine learning kedua gw pake js always i love js",
+    title: "Guess",
+    description: "Project Machine Learning perkiraan cuaca menggunakan js",
     image: "/htw.webp",
   },
 ];

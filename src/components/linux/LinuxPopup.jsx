@@ -10,7 +10,19 @@ function LinuxPopup({ open, onClose, message }) {
     }
   }, [open, onClose]);
 
-  const isDayat = message?.toLowerCase().includes("dayat");
+  const containsDayat = (text) => {
+  if (!text) return false
+
+  const cleaned = text
+    .toLowerCase()
+    .normalize("NFD") 
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z]/g, "")
+
+    const pattern = /d.*a.*y.*a.*t/
+    return pattern.test(cleaned)
+  }
+
 
   return (
     <AnimatePresence>

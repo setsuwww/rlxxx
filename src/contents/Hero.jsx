@@ -8,10 +8,12 @@ import HeroText from "./Hero/HeroText"
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center p-6 overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
+    <div className="flex flex-col items-center justify-center min-h-screen relative p-6 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950">
       <FrameLines />
       <LightOrbs />
-      <Badge />
+      <div className="mb-16 sm:mb-20 md:mb-24">
+        <Badge />
+      </div>
       <HeroText />
     </div>
   )

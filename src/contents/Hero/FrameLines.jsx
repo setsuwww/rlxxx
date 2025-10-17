@@ -4,8 +4,8 @@ import { motion } from "framer-motion"
 import React from "react"
 
 const lineVariant = {
-  hidden: { opacity: 0, x: 100, y: -100, scale: 0.9 },
-  visible: { opacity: 1, x: 0, y: 0, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
+  hidden: { opacity: 0, scale: 0.8, y: -100 },
+  visible: { opacity: 1, scale: [1, 0.8, 0.9, 0.8], y: 0, transition: { duration: 1, ease: "easeInOut" } }
 }
 
 const FrameLines = React.memo(() => (

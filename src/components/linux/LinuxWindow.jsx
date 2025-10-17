@@ -6,7 +6,7 @@ function LinuxWindow({ title, children, showFooter = false, footerContent, dark 
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className={`${classes.bgClass} backdrop-blur-sm rounded-lg shadow-lg overflow-hidden`}>
+      <div className={`${classes.bgClass} backdrop-blur-sm rounded-xl shadow-lg overflow-hidden`}>
         
         {/* Header */}
         <header className={`${classes.headerClass} flex items-center justify-between px-4 py-2 border-b`}>
