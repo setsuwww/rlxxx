@@ -70,26 +70,6 @@ export default function About() {
             </div>
           ))}
         </div>
-
-        {/* GitHub Button */}
-        <motion.div
-          variants={fadeIn}
-          transition={{ delay: 0.3 }}
-          className="mt-14 flex justify-center"
-        >
-          <motion.a
-            href="https://github.com/setsuwww"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white 
-                       bg-gradient-to-r from-zinc-800 to-zinc-900 border border-white/10 
-                       shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-          >
-            <FaGithub className="w-5 h-5" />
-            Sokin Github
-          </motion.a>
-        </motion.div>
       </div>
     </motion.section>
   )
